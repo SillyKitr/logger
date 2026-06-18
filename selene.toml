@@ -1,0 +1,7 @@
+std = "luau"
+exclude = [ "lune_packages/*", "luau_packages/*" ]
+
+[rules]
+global_usage = "allow"
+unused_variable = "allow"
+if_same_then_else = "allow"
