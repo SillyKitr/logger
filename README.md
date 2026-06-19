@@ -30,10 +30,11 @@ end
 
 log:fatal("It's joever.")
 ```
-Script [here](https://github.com/SillyKitr/logger/tree/master/examples) by the way
+Script [here](https://github.com/SillyKitr/logger/tree/master/examples) by the way.
+
 Output:
 
-```ini
+```bash
 [example] [TRACE] This is a trace!
 [example] [DEBUG] wow
 [example] [INFO] Who cares anyways?
