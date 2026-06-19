@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Lune and Pesde
+        uses: lumin-org/setup-pesde@v0.4.1
+        with:
+          cache: true
+
+      - name: Install Dependencies
+        run: pesde install
+
+      - name: Run Tests
+        run: lune run tests/iguessbro.luau
+
+  lint:
+    name: Lint with Selene
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rokit
+        uses: CompeyDev/setup-rokit@v0.1.2
+
+      - name: Lint
+        run: selene src
