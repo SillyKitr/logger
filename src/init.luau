@@ -1,4 +1,5 @@
 -- Types for developers
+
 export type LevelName = "trace" | "debug" | "info" | "warn" | "error" | "fatal"
 export type Sink = (line: string, level: LevelName) -> ()
 

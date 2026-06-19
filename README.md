@@ -2,8 +2,6 @@
 
 A lightweight, configurable logger for [Luau](https://luau-lang.org) on [Lune](https://lune-org.github.io).
 
-Features: leveled logging, ANSI colors, timestamps, custom sinks, and a simple API.
-
 ## Installation
 
 ```bash
@@ -41,3 +39,7 @@ lune run tests/iguessbro.luau
 ## License
 
 [MIT](LICENSE)
+
+## TODO:
+- Add proper settings
+- Listen for actual feedback
