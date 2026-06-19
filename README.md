@@ -2,45 +2,10 @@
 
 A lightweight, configurable logger for [Luau](https://luau-lang.org) on [Lune](https://lune-org.github.io). Provides a simple API with leveled logging, ANSI colors, timestamps, and custom sinks.
 
-## Installation
+## Getting started
 
 ```bash
 pesde add kitr/logger
-```
-
-## Quick Start
-
-```luau
-local Logger = require("path/to/kitr_logger")
-Logger.configure({ name = "App", level = "info" })
-
-Logger.info("Hello", "world!")
-Logger.warn("Something looks off")
-Logger.error("oh my god detected unfunny:", 67)
-```
-
-Output:
-
-```ini
-[App] [INFO] Hello world!
-[App] [WARN] Something looks off
-[App] [ERROR] oh my god detected unfunny: 67
-```
-
-## API
-
-### Creating a Logger
-
-```lua
-local log = Logger.new({
-    name = "Server",        -- optional, shown in brackets
-    level = "debug",        -- "trace" | "debug" | "info" | "warn" | "error" | "fatal"
-    colors = true,          -- enable ANSI color output
-    timestamps = true,      -- prepend UTC timestamps
-    sink = function(line, level)  -- custom output (default: print)
-        io.write(line, "\n")
-    end,
-})
 ```
 
 ### Example Usage
@@ -66,6 +31,36 @@ end
 log:fatal("It's joever.")
 ```
 Script [here](https://github.com/SillyKitr/logger/tree/master/examples) by the way
+Output:
+
+```ini
+[example] [TRACE] This is a trace!
+[example] [DEBUG] wow
+[example] [INFO] Who cares anyways?
+[example] [WARN] mrrrp?
+[example] [ERROR] Bullshit spotted in davenport, iowa
+[example] [ERROR] Bullshit spotted in davenport, iowa
+[example] [ERROR] Bullshit spotted in davenport, iowa
+[example] [ERROR] Bullshit spotted in davenport, iowa
+[example] [ERROR] Bullshit spotted in davenport, iowa
+[example] [FATAL] It's joever.
+```
+
+## API
+
+### Creating a Logger
+
+```lua
+local log = Logger.new({
+    name = "Server",        -- optional, shown in brackets
+    level = "debug",        -- "trace" | "debug" | "info" | "warn" | "error" | "fatal"
+    colors = true,          -- enable ANSI color output
+    timestamps = true,      -- prepend UTC timestamps
+    sink = function(line, level)  -- custom output (default: print)
+        io.write(line, "\n")
+    end,
+})
+```
 
 ### Logger Methods
 
@@ -93,7 +88,3 @@ Script [here](https://github.com/SillyKitr/logger/tree/master/examples) by the w
 ```bash
 lune run tests/iguessbro.luau
 ```
-
-## License
-
-MIT &copy; SillyKitr
