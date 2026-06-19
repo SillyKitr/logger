@@ -11,8 +11,7 @@ pesde add kitr/logger
 ## Quick Start
 
 ```luau
-local Logger = require("@pkg/kitr_logger")
-
+local Logger = require("path/to/kitr_logger")
 Logger.configure({ name = "App", level = "info" })
 
 Logger.info("Hello", "world!")
@@ -20,7 +19,9 @@ Logger.warn("Something looks off")
 Logger.error("oh my god detected unfunny:", 67)
 ```
 
-```md
+Output:
+
+```ini
 [App] [INFO] Hello world!
 [App] [WARN] Something looks off
 [App] [ERROR] oh my god detected unfunny: 67
@@ -42,59 +43,26 @@ local log = Logger.new({
 })
 ```
 
-### Logging
+### Logger Methods
 
-```lua
-log:trace("verbose detail")
-log:debug("debug info")
-log:info("general info")
-log:warn("warning")
-log:error("error")
-log:fatal("fatal error")
-```
-
-Multiple arguments are space-joined automatically.
-
-### Level Management
-
-```lua
-log:getLevel()               -- returns current level name
-log:setLevel("warn")         -- change level at runtime
-log:isLevelEnabled("debug")  -- check if a level would be logged
-```
-
-### Default Logger (Module-Level)
-
-Use the module directly as a singleton:
-
-```lua
-Logger.configure({ name = "App", level = "warn" })
-Logger.info("hidden")        -- filtered out
-Logger.warn("visible")
-Logger.getLevel()            -- "warn"
-Logger.setLevel("trace")
-```
+| Method  | Description                    |
+| ------- | ------------------------------ |
+| `trace` | Log at trace level             |
+| `debug` | Log at debug level             |
+| `info`  | Log at info level              |
+| `warn`  | Log at warn level              |
+| `error` | Log at error level             |
+| `fatal` | Log at fatal level             |
 
 ## Configuration Options
 
-| Option      | Type                          | Default   | Description                        |
-|-------------|-------------------------------|-----------|------------------------------------|
-| `name`      | `string?`                     | `nil`     | Logger name shown in brackets      |
-| `level`     | `LevelName?`                  | `"info"`  | Minimum level to log               |
-| `colors`    | `boolean?`                    | `false`   | Enable ANSI color codes            |
-| `timestamps`| `boolean?`                    | `false`   | Prepend ISO 8601 UTC timestamps    |
-| `sink`      | `((string, LevelName) -> ())?`| `print`   | Custom output function             |
-
-## Levels
-
-| Level   | Value | Color          |
-|---------|-------|----------------|
-| `trace` | 10    | Gray           |
-| `debug` | 20    | Light blue     |
-| `info`  | 30    | Green          |
-| `warn`  | 40    | Yellow         |
-| `error` | 50    | Bold red       |
-| `fatal` | 60    | Purple         |
+| Option       | Type                           | Default  | Description                     |
+| ------------ | ------------------------------ | -------- | ------------------------------- |
+| `name`       | `string?`                      | `nil`    | Logger name shown in brackets   |
+| `level`      | `LevelName?`                   | `"info"` | Minimum level to log            |
+| `colors`     | `boolean?`                     | `false`  | Enable ANSI color codes         |
+| `timestamps` | `boolean?`                     | `false`  | Prepend ISO 8601 UTC timestamps |
+| `sink`       | `((string, LevelName) -> ())?` | `print`  | Custom output function          |
 
 ## Running Tests
 
