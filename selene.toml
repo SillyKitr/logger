@@ -5,3 +5,4 @@ exclude = [ "lune_packages/*", "luau_packages/*" ]
 global_usage = "allow"
 unused_variable = "allow"
 if_same_then_else = "allow"
+shadowing = "allow"

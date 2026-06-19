@@ -1,5 +1,5 @@
 -- Types for developers
-export type LevelName = "trace" | "debug" | "info" | "warn" | "error" | "fatal" | "off"
+export type LevelName = "trace" | "debug" | "info" | "warn" | "error" | "fatal"
 export type Sink = (line: string, level: LevelName) -> ()
 
 export type Options = {
@@ -30,7 +30,6 @@ local LEVEL_VALUES = {
 	warn = 40,
 	error = 50,
 	fatal = 60,
-	off = math.huge,
 }
 
 local LEVEL_COLORS = {
@@ -161,7 +160,6 @@ Logger.Level = {
 	Warn = "warn",
 	Error = "error",
 	Fatal = "fatal",
-	Off = "off",
 }
 
 function Logger.new(options: Options?): Logger

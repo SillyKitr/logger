@@ -85,16 +85,6 @@ local function testFiltering()
 
 		print(string.format("  level '%s' captured %d entries", threshold, #entries))
 	end
-
-	local entries, sink = makeSink()
-	local log = Logger.new({
-		level = "off",
-		sink = sink,
-	})
-
-	runAllLevels(log, "hidden")
-	expectEqual(#entries, 0, "off level should hide every message")
-	print("  level 'off' captured 0 entries")
 end
 
 local function testSetLevel()
