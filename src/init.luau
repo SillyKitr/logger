@@ -22,7 +22,6 @@ export type Logger = {
 	fatal: (self: Logger, ...any) -> (),
 }
 
--- Higher values mean more important messages.
 local LEVEL_VALUES = {
 	trace = 10,
 	debug = 20,
