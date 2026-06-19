@@ -1,8 +1,9 @@
 name = "kitr/logger"
-version = "0.1.0"
+version = "0.0.1"
 description = 'A quite useful logger module for most of your needs; contains a really simple API that is very easy to understand and use. it provides a better logging experience instead of just print("Hello world!")'
 authors = ["SillyKitr"]
 license = "MIT"
+repository = "https://github.com/SillyKitr/logger"
 includes = ["src/**", "pesde.toml", "README.md", "LICENSE"]
 
 [target]
