@@ -1,0 +1,10 @@
+{
+    "github.copilot.chat.commitMessageGeneration.instructions": [
+        {
+            "file": ".copilot-commit-message-instructions.md"
+        },
+        {
+            "text": "You MUST strictly follow the Conventional Commits specification."
+        }
+    ]
+}
