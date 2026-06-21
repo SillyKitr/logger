@@ -4,7 +4,7 @@ local log = Logger.new({
         name = "example",
         level = "trace",
 		colors = true,
-        -- Yea sink is not gonna be used here since it's works for
+        -- Yea sink is not gonna be used here since it works for
         -- Custom logging actions.
 })
 
